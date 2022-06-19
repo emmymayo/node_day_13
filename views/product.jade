@@ -1,0 +1,18 @@
+extends layout 
+
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+<script src="https://js.stripe.com/v3/"></script>
+block content 
+
+    form(action="/checkout", method="post") 
+        .product 
+            p #{product.id}
+            p #{product.title}
+            p Price: #{product.price}:
+            p #{product.description}
+            img(src="#{product.image}", alt="#{product.title} image")
+            input(type="hidden", name="product_id", value="#{product.id}")
+            br
+            button(type="submit", class="btn btn-success", id="checkout-button") Checkout
