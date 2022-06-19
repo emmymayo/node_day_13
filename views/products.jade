@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+    .products.row 
+        each product, i in products 
+            .product.col-md-4
+                a(href="/products/#{product.id}") 
+                    | #{product.id}
+                    | Title: #{product.title}
+                    | Price: #{product.price}
+                    | #{product.description}
+                    img(src="#{product.image}", alt="#{product.title} image")
